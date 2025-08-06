@@ -782,10 +782,10 @@
                             <div class="play-button" onclick="playMovie('movie1')"></div>
                         </div>
                         <div class="movie-info">
-                            <h3>Tajemnica Psarskich Wzgórz</h3>
+                            <h3>Edit Emila</h3>
                             <div class="movie-meta">
                                 <div><span>Gatunek:</span> Thriller/Dramat</div>
-                                <div><span>Rok:</span> 2024</div>
+                                <div><span>Rok:</span> 2025</div>
                             </div>
                             <p>Mroczny thriller o młodej dziennikarce odkrywającej sekrety małego miasteczka. Film łączy elementy psychologicznego dramatu z napięciem charakterystycznym dla najlepszych thrillerów.</p>
                         </div>
@@ -796,10 +796,10 @@
                             <div class="play-button" onclick="playMovie('movie2')"></div>
                         </div>
                         <div class="movie-info">
-                            <h3>Powrót do Psarów</h3>
+                            <h3>Edit Antka</h3>
                             <div class="movie-meta">
-                                <div><span>Gatunek:</span> Komedia/Romans</div>
-                                <div><span>Rok:</span> 2023</div>
+                                <div><span>Gatunek:</span> Akcja</div>
+                                <div><span>Rok:</span> 2025</div>
                             </div>
                             <p>Ciepła komedia romantyczna o powrocie do korzeni i odnalezieniu miłości. Historia pełna humoru i wzruszających momentów, która pokazuje piękno prostych rzeczy.</p>
                         </div>
@@ -810,10 +810,10 @@
                             <div class="play-button" onclick="playMovie('movie3')"></div>
                         </div>
                         <div class="movie-info">
-                            <h3>Legenda Psarskiego Lasu</h3>
+                            <h3>Edit Jakuba</h3>
                             <div class="movie-meta">
                                 <div><span>Gatunek:</span> Fantasy/Przygodowy</div>
-                                <div><span>Rok:</span> 2023</div>
+                                <div><span>Rok:</span> 2025</div>
                             </div>
                             <p>Magiczna opowieść o przyjaźni i odwadze, osadzona w tajemniczym świecie lokalnych legend. Film dla całej rodziny z niezapomnianymi przygodami.</p>
                         </div>
@@ -824,10 +824,10 @@
                             <div class="play-button" onclick="playMovie('movie4')"></div>
                         </div>
                         <div class="movie-info">
-                            <h3>Psary: Dokumentalna Historia</h3>
+                            <h3>Edit Marcela</h3>
                             <div class="movie-meta">
-                                <div><span>Gatunek:</span> Dokumentalny</div>
-                                <div><span>Rok:</span> 2022</div>
+                                <div><span>Gatunek:</span> Dokumentalny/Dramat</div>
+                                <div><span>Rok:</span> 2025</div>
                             </div>
                             <p>Fascynujący portret lokalnej społeczności, jej tradycji i współczesnych wyzwań. Intymny dokument o ludziach i miejscu, które ich kształtuje.</p>
                         </div>
@@ -835,7 +835,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Team Page -->
         <div id="team" class="page">
             <div class="container">
@@ -1126,63 +1125,80 @@
 
         // Enhanced movie player
         function playMovie(movieId) {
-            const movies = {
-                'movie1': 'Tajemnica Psarskich Wzgórz',
-                'movie2': 'Powrót do Psarów',
-                'movie3': 'Legenda Psarskiego Lasu',
-                'movie4': 'Psary: Dokumentalna Historia'
-            };
-            
-            // Create modal-like experience
-            const modal = document.createElement('div');
-            modal.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(15, 15, 35, 0.95);
-                backdrop-filter: blur(10px);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 10000;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            `;
-            
-            const content = document.createElement('div');
-            content.style.cssText = `
-                background: rgba(15, 15, 35, 0.9);
-                border: 1px solid rgba(99, 102, 241, 0.3);
-                border-radius: 20px;
-                padding: 3rem;
-                text-align: center;
-                max-width: 500px;
-                color: #f8fafc;
-            `;
-            
-            content.innerHTML = `
-                <h3 style="margin-bottom: 1rem; color: #6366f1;">▶ ${movies[movieId]}</h3>
-                <p style="margin-bottom: 2rem; color: #94a3b8;">W pełnej wersji strony tutaj znajdowałby się odtwarzacz wideo z filmem.</p>
-                <button onclick="this.parentElement.parentElement.remove()" style="
-                    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-                    color: white;
-                    border: none;
-                    padding: 0.8rem 2rem;
-                    border-radius: 10px;
-                    cursor: pointer;
-                    font-weight: 600;
-                ">Zamknij</button>
-            `;
-            
-            modal.appendChild(content);
-            document.body.appendChild(modal);
-            
-            requestAnimationFrame(() => {
-                modal.style.opacity = '1';
-            });
-        }
+        const movieSources = {
+            'movie1': {
+                title: 'Edit Emila',
+                src: 'emilFilm.mp4' 
+            },
+            'movie2': {
+                title: 'Edit Antka',
+                src: 'antekFilm.mp4'
+            },
+            'movie3': {
+                title: 'Edit Jakuba',
+                src: 'kubaFilm.mp4'
+            },
+            'movie4': {
+                title: 'Edit Marcela',
+                src: 'marcelFilm.mp4'
+            }
+        };
+
+        const movie = movieSources[movieId];
+
+        const modal = document.createElement('div');
+        modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        `;
+
+        const content = document.createElement('div');
+        content.style.cssText = `
+            background: rgba(15, 15, 35, 0.9);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            max-width: 90%;
+            max-height: 90%;
+        `;
+
+        content.innerHTML = `
+            <h3 style="margin-bottom: 1rem; color: #6366f1;">${movie.title}</h3>
+            <video controls autoplay style="max-width: 100%; max-height: 70vh; border-radius: 16px; margin-bottom: 1rem;">
+                <source src="${movie.src}" type="video/mp4">
+                Twój przeglądarka nie obsługuje odtwarzacza wideo.
+            </video>
+            <br/>
+            <button onclick="this.closest('div[style]').parentElement.remove()" style="
+                background: linear-gradient(135deg, #6366f1, #8b5cf6);
+                color: white;
+                border: none;
+                padding: 0.8rem 2rem;
+                border-radius: 10px;
+                cursor: pointer;
+                font-weight: 600;
+            ">Zamknij</button>
+        `;
+
+        modal.appendChild(content);
+        document.body.appendChild(modal);
+
+        requestAnimationFrame(() => {
+            modal.style.opacity = '1';
+        });
+    }
 
         // Enhanced form handling with validation
         document.getElementById('actorForm').addEventListener('submit', function(e) {
@@ -1347,5 +1363,6 @@
 </body>
 
 </html>
+
 
 
