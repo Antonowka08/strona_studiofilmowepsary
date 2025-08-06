@@ -20,7 +20,7 @@
             overflow-x: hidden;
         }
 
-        
+        /* Header */
         header {
             position: fixed;
             top: 0;
@@ -53,7 +53,7 @@
             border-radius: 8px;
             object-fit: cover;
         }
-        
+
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
@@ -95,7 +95,7 @@
             width: 100%;
         }
 
-        
+        /* Main Content */
         main {
             margin-top: 80px;
         }
@@ -115,7 +115,7 @@
             padding: 0 2rem;
         }
 
-        
+        /* Home Page */
         .hero {
             padding: 8rem 0 6rem;
             text-align: center;
@@ -263,14 +263,20 @@
         }
 
         .video-container {
+            position: relative;
             width: 100%;
             height: 240px;
-            background: linear-gradient(135deg, #1e293b, #334155);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
             overflow: hidden;
+        }
+
+        .video-thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
         }
 
         .video-container::before {
@@ -299,7 +305,8 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 2;
         }
-        
+
+
         .play-button:hover {
             background: #6366f1;
             box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
@@ -841,7 +848,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Team Page -->
         <div id="team" class="page">
             <div class="container">
@@ -866,7 +873,7 @@
                             <div class="team-info">
                                 <div class="team-role">Aktor / Programista</div>
                                 <h3 class="team-name">Antoni Kiwer</h3>
-                                <p class="team-description">Antoni, urodzony w Polsce, wyróżnia się przedsiębiorczością, inteligencją i nienagannym wyglądem. Dzięki bystremu umysłowi i odwadze w podejmowaniu decyzji zbudował swoją karierę. Jego charyzma i elegancja ułatwiają nawiązywanie relacji biznesowych oraz zdobywanie zaufania klientów. Antoni jest wzorem nowoczesnego lidera, który inspiruje innych do osiągania ambitnych celów.</p>
+                                <p class="team-description">Doświadczony producent z 15-letnim stażem w branży. Odpowiada za koordynację wszystkich aspektów produkcji - od pre-produkcji po post-produkcję. Jego organizacyjne umiejętności i znajomość rynku filmowego są kluczowe dla sukcesu naszych projektów.</p>
                             </div>
                         </div>
 
@@ -875,7 +882,7 @@
                             <div class="team-info">
                                 <div class="team-role">Aktor / Operator</div>
                                 <h3 class="team-name">Damian Koźmiński</h3>
-                                <p class="team-description">Damian Koźmiński skończył technikum jako elektryk, ale szybko zrozumiał, że to nie jego droga. Od dziecka marzył o aktorstwie – wszystko zaczęło się, gdy jako chłopiec mieszkał w Indiach i zobaczył na żywo plan filmowy. Kolorowe stroje, emocje i magia kamery zapadły mu w pamięć na zawsze. Po skończeniu szkoły postanowił nie iść utartym szlakiem – zgłosił się do pracy przy filmach i zaczął spełniać marzenie z dzieciństwa.</p>
+                                <p class="team-description">Uznany operator kamery z charakterystycznym, wizualnym stylem. Współpracował przy realizacji ponad 30 filmów fabularnych i dokumentalnych. Jego znajomość najnowszych technologii filmowych pozwala na tworzenie wyjątkowych obrazów kinowych.</p>
                             </div>
                         </div>
 
@@ -1130,8 +1137,8 @@
             }
         }
 
-        // Enhanced movie player
-        function playMovie(movieId) {
+        
+    function playMovie(movieId) {
         const movieSources = {
             'movie1': {
                 title: 'Edit Emila',
@@ -1206,6 +1213,7 @@
             modal.style.opacity = '1';
         });
     }
+
 
         // Enhanced form handling with validation
         document.getElementById('actorForm').addEventListener('submit', function(e) {
@@ -1368,9 +1376,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
-
-
