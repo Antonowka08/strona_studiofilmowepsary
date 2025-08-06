@@ -284,6 +284,10 @@
         }
 
         .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 80px;
             height: 80px;
             background: rgba(99, 102, 241, 0.9);
@@ -293,13 +297,11 @@
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
             z-index: 2;
         }
-
+        
         .play-button:hover {
             background: #6366f1;
-            transform: scale(1.1);
             box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
         }
 
@@ -779,6 +781,7 @@
                 <div class="movies-grid">
                     <div class="movie-card">
                         <div class="video-container">
+                            <img src="emilMini.jpg" alt="Miniatura filmu" class="video-thumbnail">
                             <div class="play-button" onclick="playMovie('movie1')"></div>
                         </div>
                         <div class="movie-info">
@@ -793,6 +796,7 @@
 
                     <div class="movie-card">
                         <div class="video-container">
+                            <img src="antekMini.jpg" alt="Miniatura filmu" class="video-thumbnail">
                             <div class="play-button" onclick="playMovie('movie2')"></div>
                         </div>
                         <div class="movie-info">
@@ -807,6 +811,7 @@
 
                     <div class="movie-card">
                         <div class="video-container">
+                            <img src="kubaMini.jpg" alt="Miniatura filmu" class="video-thumbnail">
                             <div class="play-button" onclick="playMovie('movie3')"></div>
                         </div>
                         <div class="movie-info">
@@ -821,6 +826,7 @@
 
                     <div class="movie-card">
                         <div class="video-container">
+                            <img src="marcelMini.jpg" alt="Miniatura filmu" class="video-thumbnail">
                             <div class="play-button" onclick="playMovie('movie4')"></div>
                         </div>
                         <div class="movie-info">
@@ -835,6 +841,7 @@
                 </div>
             </div>
         </div>
+        
         <!-- Team Page -->
         <div id="team" class="page">
             <div class="container">
@@ -1363,6 +1370,7 @@
 </body>
 
 </html>
+
 
 
 
