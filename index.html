@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logoStudio.png" />
     <title>Studio Filmowe Psary</title>
     <style>
         * {
@@ -19,7 +20,7 @@
             overflow-x: hidden;
         }
 
-        /* Header */
+        
         header {
             position: fixed;
             top: 0;
@@ -40,6 +41,19 @@
             margin: 0 auto;
         }
 
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
@@ -81,7 +95,7 @@
             width: 100%;
         }
 
-        /* Main Content */
+        
         main {
             margin-top: 80px;
         }
@@ -101,7 +115,7 @@
             padding: 0 2rem;
         }
 
-        /* Home Page */
+        
         .hero {
             padding: 8rem 0 6rem;
             text-align: center;
@@ -704,7 +718,10 @@
 <body>
     <header>
         <nav>
-            <div class="logo">Studio Filmowe Psary</div>
+            <div class="logo-container">
+                <img src="logoStudio.png" alt="Studio Filmowe Psary Logo" class="logo-image">
+                <div class="logo">Studio Filmowe Psary</div>
+            </div>
             <ul class="nav-links">
                 <li><a href="#" onclick="showPage('home')">Strona Główna</a></li>
                 <li><a href="#" onclick="showPage('movies')">Filmy</a></li>
@@ -1330,4 +1347,5 @@
 </body>
 
 </html>
+
 
